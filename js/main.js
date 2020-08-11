@@ -10,7 +10,7 @@ let spotLight
 
 function init() {
     scene = new THREE.Scene();
-    scene.background = new THREE.CubeTextureLoader().setPath("../skybox/").load([
+    scene.background = new THREE.CubeTextureLoader().setPath("./skybox/").load([
         "posx.jpg", "negx.jpg", "posy.jpg", "negy.jpg", "posz.jpg", "negz.jpg"
     ]);
 
@@ -49,7 +49,7 @@ function init() {
     });
 
     const loader = new GLTFLoader(loadingManager);
-    loader.load("../model/black_leather_chair.gltf", function(result) {
+    loader.load("./model/black_leather_chair.gltf", function(result) {
         for (let model of result.scene.children) {
             model.scale.set(10,10,10)
             model.position.set(0, -5, 0);
